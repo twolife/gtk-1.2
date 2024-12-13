@@ -28,9 +28,10 @@ html/gtk_tut_fr-21.html  	\
 html/gtk_tut_fr-22.html  	\
 html/gtk_tut_fr-23.html  	\
 html/gtk_tut_fr-24.html  	\
-html/gtk_tut_fr.html text/gtk_tut_fr.txt
+html/gtk_tut_fr.html
+#text/gtk_tut_fr.txt
 
-TUTORIAL_FILES=text/gtk_tut.txt html/gtk_tut.html \
+TUTORIAL_FILES=html/gtk_tut.html \
 html/gtk_tut.html        	\
 html/gtk_tut-1.html      	\
 html/gtk_tut-2.html      	\
@@ -63,6 +64,7 @@ html/gtk_tut-28.html     	\
 html/gtk_tut-29.html     	\
 html/gtk_tut-30.html     	\
 html/gtk_tut-31.html
+#text/gtk_tut.txt
 
 TUTORIAL_IT_FILES=	html/gtk_tut_it.html     	\
 	html/gtk_tut_it-1.html   	\
@@ -88,8 +90,8 @@ TUTORIAL_IT_FILES=	html/gtk_tut_it.html     	\
 	html/gtk_tut_it-21.html  	\
 	html/gtk_tut_it-22.html  	\
 	html/gtk_tut_it-23.html  	\
-	html/gtk_tut_it-24.html		\
-	text/gtk_tut_it.txt
+	html/gtk_tut_it-24.html
+#	text/gtk_tut_it.txt
 
 FAQ_FILES=html/gtkfaq.html		\
 	html/gtkfaq-1.html       	\
@@ -98,8 +100,8 @@ FAQ_FILES=html/gtkfaq.html		\
 	html/gtkfaq-4.html       	\
 	html/gtkfaq-5.html       	\
 	html/gtkfaq-6.html       	\
-	html/gtkfaq-7.html		\
-	text/gtkfaq.txt
+	html/gtkfaq-7.html
+#	text/gtkfaq.txt
 
 .PHONY: html htmldir faq tutorial tutorial_it tutorial_fr files
 
@@ -130,8 +132,9 @@ faq: htmldir textdir
 	(cd $(srcdir); sgml2html gtkfaq.sgml; \
 	perl gtkdocs_fix gtkfaq*html; \
 	mv gtkfaq*html html/; \
-	sgml2txt gtkfaq.sgml; \
-	mv gtkfaq.txt text/)
+	echo "skipping sgml2txt for now...")
+#	sgml2txt gtkfaq.sgml; \
+#	mv gtkfaq.txt text/)
 
 $(TUTORIAL_FILES): tutorial
 
@@ -143,22 +146,25 @@ tutorial: htmldir textdir
 	(cd $(srcdir); sgml2html gtk_tut.sgml; \
 	perl gtkdocs_fix gtk_tut*html; \
 	mv gtk_tut*html html/; \
-	sgml2txt gtk_tut.sgml; \
-	mv gtk_tut.txt text/)
+	echo "skipping sgml2txt for now...")
+#	sgml2txt gtk_tut.sgml; \
+#	mv gtk_tut.txt text/)
 
 tutorial_it: htmldir textdir
 	(cd $(srcdir); sgml2html --language=it gtk_tut_it.sgml; \
 	perl gtkdocs_fix gtk_tut_it*html; \
 	mv gtk_tut_it*html html/; \
-	sgml2txt --language=it gtk_tut_it.sgml; \
-	mv gtk_tut_it.txt text/)
+	echo "skipping sgml2txt for now...")
+#	sgml2txt --language=it gtk_tut_it.sgml; \
+#	mv gtk_tut_it.txt text/)
 
 tutorial_fr: htmldir textdir
 	(cd $(srcdir); sgml2html --language=fr gtk_tut_fr.sgml; \
 	perl gtkdocs_fix gtk_tut_fr*html; \
 	mv gtk_tut_fr*html html/; \
-	sgml2txt --language=fr gtk_tut_fr.sgml; \
-	mv gtk_tut_fr.txt text/)
+	echo "skipping sgml2txt for now...")
+#	sgml2txt --language=fr gtk_tut_fr.sgml; \
+#	mv gtk_tut_fr.txt text/)
 
 
 files:
