@@ -2078,7 +2078,7 @@ gdk_window_set_icon_name (GdkWindow   *window,
   if (window_private->destroyed)
     return;
   res = XmbTextListToTextProperty (window_private->xdisplay,
-				   &name, 1, XStdICCTextStyle,
+				   (char **)&name, 1, XStdICCTextStyle,
                                	   &property);
   if (res < 0)
     {

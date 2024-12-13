@@ -26,6 +26,8 @@
 
 #if defined(XINPUT_GXI) || defined(XINPUT_XFREE)
 
+#include <string.h>
+
 /* Forward declarations */
 static void gdk_input_get_root_relative_geometry (Display *dpy, Window w, 
 						  int *x_ret, int *y_ret,
