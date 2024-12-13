@@ -1422,7 +1422,7 @@ gtk_file_selection_populate (GtkFileSelection *fs,
 
               did_recurse = TRUE;
 
-              gtk_file_selection_populate (fs, dir_name, TRUE);
+              gtk_file_selection_populate (fs, dir_name, FALSE);
 
               g_free (dir_name);
             }
