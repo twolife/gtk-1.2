@@ -69,7 +69,7 @@ echo "Running gettextize...  Ignore non-fatal messages."
 # Hmm, we specify --force here, since otherwise things dont'
 # get added reliably, but we don't want to overwrite intl
 # while making dist.
-echo "no" | gettextize --copy --force
+#echo "no" | gettextize --copy --force
 
 aclocal $ACLOCAL_FLAGS
 
