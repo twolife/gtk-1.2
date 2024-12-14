@@ -1,0 +1,7 @@
+style "default-text" {
+       fontset = "-*-arial-medium-r-normal--*-120-*-*-*-*-iso10646-1,\
+       		  -*-helvetica-medium-r-normal--*-120-*-*-*-*-*-*"
+}
+
+class "GtkWidget" style "default-text"
+
